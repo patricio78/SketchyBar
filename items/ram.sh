@@ -1,23 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# stats_bracket=(
-#   background.color="$BACKGROUND_1"
-#   background.border_color="$TRANSPARENT"
-#   background.height=30
-#   padding_left=20
-# )
+COLOR="$YELLOW"
 
-sketchybar --add alias "iStat Menus Menubar,com.bjango.istatmenus.memory" left \
-  --rename "iStat Menus Menubar,com.bjango.istatmenus.memory" ram_alias \
-  --set ram_alias icon.drawing=off \
-  label.drawing=off \
-  background.padding_right=0 \
-  background.padding_left=0 \
-  width=35 \
-  padding_right=30 \
-  padding_left=30 \
-  alias.color="$WHITE" \
-  update_freq=10
-
-# sketchybar --add bracket stats temp_alias network_alias ram_alias \
-#   --set stats "${stats_bracket[@]}"
+sketchybar --add item ram right \
+	--set ram \
+	update_freq=5 \
+    icon=􀫦 \
+	icon.color="$COLOR" \
+	icon.padding_left=10 \
+	label.color="$COLOR" \
+	label.padding_right=10 \
+	background.height=26 \
+	background.corner_radius="$CORNER_RADIUS" \
+	background.padding_left=0 \
+	background.padding_right=0 \
+	background.border_width="$BORDER_WIDTH" \
+	background.border_color="$COLOR" \
+	background.color="$BAR_COLOR" \
+	background.drawing=on \
+	script="$PLUGIN_DIR/ram.sh"
