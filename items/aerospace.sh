@@ -22,7 +22,8 @@ for mid in $(aerospace list-monitors | awk '{print $1}'); do
         label.padding_right=20 \
         label.padding_left=0 \
         label.y_offset=-1 \
-        script="$PLUGIN_DIR/aerospace.sh $sid"
+        script="$PLUGIN_DIR/aerospace.sh $sid" \
+        click_script="$PLUGIN_DIR/switch_workspace.sh $sid"
     done
 done
 
